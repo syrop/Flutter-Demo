@@ -4,7 +4,7 @@
 /local.properties
 /build
 *.apk
-
+.flutter-plugins-dependencies
 .DS_Store
 .dart_tool/
 
