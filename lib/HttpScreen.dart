@@ -35,7 +35,7 @@ class HttpScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Third Screen"),
+          title: Text("HTTP Screen"),
         ),
         body: Center(
           child: FutureBuilder<Post>(
