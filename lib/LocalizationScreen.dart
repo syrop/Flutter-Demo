@@ -14,7 +14,10 @@ class LocalizationsScreen extends StatelessWidget {
         title: Text("Localizations Screen"),
       ),
       body: Center(
-        child: Text(DemoLocalizations.of(context).title),
+        child: Text(
+          DemoLocalizations.of(context).title,
+          style: Theme.of(context).textTheme.headline4,
+        ),
       ),
     );
   }
