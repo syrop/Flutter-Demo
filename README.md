@@ -1,4 +1,4 @@
-# sample_app
+# Wiktor's sample app
 
 A sample Flutter application.
 
