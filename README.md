@@ -7,7 +7,7 @@ A sample Flutter application.
 For help getting started with Flutter, view online
 [documentation](https://flutter.io/).
 
-**To open and build APK file in Ubuntu 20.04:**
+**To open the project in Android Studio and build APK file in Ubuntu 20.04:**
 
 (Assumption is made that Android Studio is already installed in your system).
 
