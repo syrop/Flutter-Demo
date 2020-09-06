@@ -4,14 +4,16 @@ import 'dart:convert';
 
 class Post {
   final int date;
+  final int positive;
   final String state;
 
-  Post({this.date, this.state});
+  Post({this.date, this.positive, this.state});
 
   factory Post.fromJson(Map<String, dynamic> json) {
     return Post(
       date: json['date'],
       state: json['state'],
+      positive: json['positive'],
     );
   }
 }
@@ -42,7 +44,18 @@ class HttpScreen extends StatelessWidget {
             future: fetchPost(),
             builder: (context, snapshot) {
               if (snapshot.hasData) {
-                return Text(snapshot.data.state);
+                return Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Text('State: ${snapshot.data.state}'),
+                      Text(
+                        'Positive: ${snapshot.data.positive}',
+                        style: Theme.of(context).textTheme.display1,
+                      ),
+                    ]
+                  ),
+                );
               } else if (snapshot.hasError) {
                 return Text("${snapshot.error}");
               }
