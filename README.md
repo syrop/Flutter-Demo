@@ -7,7 +7,7 @@ A sample Flutter application.
 For help getting started with Flutter, view online
 [documentation](https://flutter.io/).
 
-To open and run in Ubuntu 20.04:
+**To open and run in Ubuntu 20.04:**
 
 (Assumption is made that Android Studio is already installed in your system).
 
