@@ -48,10 +48,13 @@ class HttpScreen extends StatelessWidget {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Text('State: ${snapshot.data.state}'),
+                      Text(
+                        'State: ${snapshot.data.state}',
+                        style: Theme.of(context).textTheme.headline5,
+                      ),
                       Text(
                         'Positive: ${snapshot.data.positive}',
-                        style: Theme.of(context).textTheme.display1,
+                        style: Theme.of(context).textTheme.headline4,
                       ),
                     ]
                   ),
