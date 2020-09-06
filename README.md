@@ -22,9 +22,13 @@ flutter doctor
 3. Install Dart:
 
 sudo apt install apt-transport-https
+
 sudo sh -c 'wget -qO- https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -'
+
 sudo sh -c 'wget -qO- https://storage.googleapis.com/download.dartlang.org/linux/debian/dart_stable.list > /etc/apt/sources.list.d/dart_stable.list'
+
 sudo apt update
+
 sudo apt install dart
 
 4. Set up the path do Android SDK:
@@ -90,4 +94,5 @@ https://github.com/flutter/flutter-intellij/issues/4806
 13. Get and upgrade the dependencies:
 
 flutter pub get
+
 flutter pub upgrade
