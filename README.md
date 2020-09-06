@@ -14,7 +14,7 @@ For help getting started with Flutter, view online
 1. Install Flutter: 
 
 ```
-sudo snap flutter --classic
+sudo snap install flutter --classic
 ```
 
 2. Initialize Flutter:
