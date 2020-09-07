@@ -5,7 +5,7 @@ import 'package:flutter_app/LocalizationScreen.dart';
 import 'package:flutter_app/SwitchScreen.dart';
 import 'ListScreen.dart';
 import 'HttpScreen.dart';
-import 'localization/DemoLocalizationsDelegate.dart';
+import 'localization/WiktorLocalizationsDelegate.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'UrlScreen.dart';
 
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return new MaterialApp(
       localizationsDelegates: [
-        const DemoLocalizationsDelegate(),
+        const WiktorLocalizationsDelegate(),
         GlobalMaterialLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
       ],

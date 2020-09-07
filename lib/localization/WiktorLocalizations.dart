@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class DemoLocalizations {
-  DemoLocalizations(this.locale);
+class WiktorLocalizations {
+  WiktorLocalizations(this.locale);
 
   final Locale locale;
 
-  static DemoLocalizations of(BuildContext context) {
-    return Localizations.of<DemoLocalizations>(context, DemoLocalizations);
+  static WiktorLocalizations of(BuildContext context) {
+    return Localizations.of<WiktorLocalizations>(context, WiktorLocalizations);
   }
 
   static Map<String, Map<String, String>> _localizedValues = {

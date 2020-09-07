@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'localization/DemoLocalizations.dart';
+import 'localization/WiktorLocalizations.dart';
 
 class LocalizationsScreen extends StatelessWidget {
   @override
@@ -7,11 +7,11 @@ class LocalizationsScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(DemoLocalizations.of(context).title),
+        title: Text(WiktorLocalizations.of(context).title),
       ),
       body: Center(
         child: Text(
-          DemoLocalizations.of(context).title,
+          WiktorLocalizations.of(context).title,
           style: Theme.of(context).textTheme.headline4,
         ),
       ),
