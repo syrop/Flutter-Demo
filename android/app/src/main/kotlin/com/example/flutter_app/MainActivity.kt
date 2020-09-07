@@ -22,7 +22,8 @@ class MainActivity : FlutterActivity() {
                 }
                 else {
                     result.error(
-                        "Currently unavailable", "Battery level not available currently.",
+                        "Currently unavailable",
+                        "Battery level not available currently.",
                         null,
                     )
                 }
