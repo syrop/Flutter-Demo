@@ -9,6 +9,7 @@ import io.flutter.plugin.common.MethodChannel
 
 @RequiresApi(VERSION_CODES.LOLLIPOP)
 class MainActivity : FlutterActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         MethodChannel(flutterView, CHANNEL).setMethodCallHandler { call, result ->
