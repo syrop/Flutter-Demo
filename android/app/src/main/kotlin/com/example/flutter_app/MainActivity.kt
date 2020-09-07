@@ -13,7 +13,7 @@ class MainActivity : FlutterActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         MethodChannel(flutterView, CHANNEL).setMethodCallHandler { call, result ->
-            if (call.method == "getBatteryLevel") {
+            if (call.method == METHOD) {
                 val batteryManager = getSystemService(BATTERY_SERVICE) as BatteryManager
                 val batteryLevel =
                     batteryManager.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)
@@ -36,5 +36,6 @@ class MainActivity : FlutterActivity() {
 
     companion object {
         private const val CHANNEL = "call.flutter.io/battery"
+        private const val METHOD = "getBatteryLevel"
     }
 }
