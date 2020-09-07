@@ -14,7 +14,9 @@ class MainActivity : FlutterActivity() {
         super.onCreate(savedInstanceState)
         MethodChannel(flutterView, CHANNEL).setMethodCallHandler { call, result ->
             if (call.method == "getBatteryLevel") {
-                val batteryLevel = getBatteryLevel()
+                val batteryManager = getSystemService(BATTERY_SERVICE) as BatteryManager
+                val batteryLevel =
+                    batteryManager.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)
                 if (batteryLevel != -1) {
                     result.success(batteryLevel)
                 }
@@ -29,11 +31,6 @@ class MainActivity : FlutterActivity() {
                 result.notImplemented()
             }
         }
-    }
-
-    private fun getBatteryLevel(): Int {
-        val batteryManager = getSystemService(BATTERY_SERVICE) as BatteryManager
-        return batteryManager.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)
     }
 
     companion object {
