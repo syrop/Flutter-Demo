@@ -7,32 +7,33 @@ import androidx.annotation.RequiresApi
 import io.flutter.app.FlutterActivity
 import io.flutter.plugin.common.MethodChannel
 
+@RequiresApi(VERSION_CODES.LOLLIPOP)
 class MainActivity : FlutterActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         MethodChannel(flutterView, CHANNEL).setMethodCallHandler { call, result ->
             if (call.method == "getBatteryLevel") {
-                val batteryLevel = batteryLevel
+                val batteryLevel = getBatteryLevel()
                 if (batteryLevel != -1) {
                     result.success(batteryLevel)
-                } else {
+                }
+                else {
                     result.error(
                         "Currently unavailable", "Battery level not available currently.",
-                        null
+                        null,
                     )
                 }
-            } else {
+            }
+            else {
                 result.notImplemented()
             }
         }
     }
 
-    private val batteryLevel: Int
-        @RequiresApi(VERSION_CODES.LOLLIPOP)
-        get() {
-            val batteryManager = getSystemService(BATTERY_SERVICE) as BatteryManager
-            return batteryManager.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)
-        }
+    private fun getBatteryLevel(): Int {
+        val batteryManager = getSystemService(BATTERY_SERVICE) as BatteryManager
+        return batteryManager.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)
+    }
 
     companion object {
         private const val CHANNEL = "call.flutter.io/battery"
