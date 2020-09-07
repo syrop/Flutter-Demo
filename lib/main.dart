@@ -7,7 +7,6 @@ import 'ListScreen.dart';
 import 'HttpScreen.dart';
 import 'localization/WiktorLocalizationsDelegate.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'UrlScreen.dart';
 import 'BatteryScreen.dart';
 
 void main() {
@@ -149,16 +148,6 @@ class _HomePageState extends State<HomePage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => LocalizationsScreen()),
-              );
-            },
-          ),
-          ListTile(
-            leading: Icon(Icons.flag),
-            title: Text('URL Screen'),
-            onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => UrlScreen()),
               );
             },
           ),
