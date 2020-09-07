@@ -3,6 +3,7 @@ package com.example.flutter_app
 import android.os.BatteryManager
 import android.os.Build.VERSION_CODES
 import android.os.Bundle
+import androidx.annotation.RequiresApi
 import io.flutter.app.FlutterActivity
 import io.flutter.plugin.common.MethodChannel
 
@@ -27,7 +28,7 @@ class MainActivity : FlutterActivity() {
     }
 
     private val batteryLevel: Int
-        @androidx.annotation.RequiresApi(VERSION_CODES.LOLLIPOP)
+        @RequiresApi(VERSION_CODES.LOLLIPOP)
         get() {
             val batteryManager = getSystemService(BATTERY_SERVICE) as BatteryManager
             return batteryManager.getIntProperty(BatteryManager.BATTERY_PROPERTY_CAPACITY)
