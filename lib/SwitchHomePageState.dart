@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'NewHomePage.dart';
+import 'SwitchHomePage.dart';
 
-class NewHomePageState extends State<NewHomePage> {
+class SwitchHomePageState extends State<SwitchHomePage> {
   bool value = false;
 
   @override

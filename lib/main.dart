@@ -8,6 +8,7 @@ import 'HttpScreen.dart';
 import 'localization/WiktorLocalizationsDelegate.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'UrlScreen.dart';
+import 'BatteryScreen.dart';
 
 void main() {
   runApp(new MyApp());
@@ -158,6 +159,16 @@ class _HomePageState extends State<HomePage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => UrlScreen()),
+              );
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.flag),
+            title: Text('Battery Screen'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => BatteryScreen()),
               );
             },
           ),

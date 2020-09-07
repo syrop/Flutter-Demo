@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/NewHomePage.dart';
-import 'NewHomePageState.dart';
+import 'package:flutter_app/SwitchHomePage.dart';
+import 'SwitchHomePageState.dart';
 
 class SwitchScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final key = new GlobalKey<NewHomePageState>();
+    final key = new GlobalKey<SwitchHomePageState>();
 
-    var page = new NewHomePage(key: key,);
+    var page = new SwitchHomePage(key: key,);
 
     return Scaffold(
         appBar: AppBar(
