@@ -7,6 +7,7 @@ import 'ListScreen.dart';
 import 'HttpScreen.dart';
 import 'localization/DemoLocalizationsDelegate.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'UrlScreen.dart';
 
 void main() {
   runApp(new MyApp());
@@ -147,6 +148,16 @@ class _HomePageState extends State<HomePage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => LocalizationsScreen()),
+              );
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.flag),
+            title: Text('URL Screen'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => UrlScreen()),
               );
             },
           ),
