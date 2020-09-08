@@ -4,7 +4,7 @@ import android.os.BatteryManager
 import android.os.Build.VERSION_CODES
 import android.os.Bundle
 import androidx.annotation.RequiresApi
-import io.flutter.app.FlutterActivity
+import io.flutter.embedding.android.FlutterActivity
 import io.flutter.plugin.common.MethodChannel
 
 @RequiresApi(VERSION_CODES.LOLLIPOP)
@@ -12,7 +12,8 @@ class MainActivity : FlutterActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        MethodChannel(flutterView, CHANNEL).setMethodCallHandler { call, result ->
+        MethodChannel(checkNotNull(flutterEngine).dartExecutor.binaryMessenger, CHANNEL)
+            .setMethodCallHandler { call, result ->
             if (call.method == METHOD) {
                 val batteryManager = getSystemService(BATTERY_SERVICE) as BatteryManager
                 val batteryLevel =

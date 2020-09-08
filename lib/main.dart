@@ -10,8 +10,14 @@ import 'HttpScreen.dart';
 import 'localization/WiktorLocalizationsDelegate.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'battery/BatteryScreen.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+void main() async {
+  // To see how to react to Firebase failure, see:
+  // https://stackoverflow.com/questions/63492211/no-firebase-app-default-has-been-created-call-firebase-initializeapp-in
+  // See also: https://firebase.flutter.dev/docs/overview/
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(new MyApp());
 }
 
@@ -63,10 +69,10 @@ class HomePage extends StatefulWidget {
   final String title;
 
   @override
-  _HomePageState createState() => new _HomePageState();
+  HomePageState createState() => new HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class HomePageState extends State<HomePage> {
   void showToast(String msg) {
     // https://pub.dev/packages/fluttertoast#-readme-tab-
     Fluttertoast.showToast(
