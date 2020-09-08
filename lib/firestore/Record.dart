@@ -6,10 +6,10 @@ class Record {
   final DocumentReference reference;
 
   Record.fromMap(map, {this.reference})
-    : assert(map['name'] != null),
-      assert(map['votes'] != null),
-      name = map['name'],
-      votes = map['votes'];
+    : assert(map.get('name') != null),
+      assert(map.get('votes') != null),
+      name = map.get('name'),
+      votes = map.get('votes');
 
   Record.fromSnapshot(DocumentSnapshot snapshot)
     : this.fromMap(snapshot.data, reference: snapshot.reference);

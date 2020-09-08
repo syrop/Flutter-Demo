@@ -1,16 +1,9 @@
 import 'package:flutter/material.dart';
 import 'FirestoreHomePage.dart';
 import 'Record.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class FirestoreHomePageState extends State<FirestoreHomePage> {
-
-  final party = [
-    {"name": "BJP", "votes": 1},
-    {"name": "Congress", "votes": 3},
-    {"name": "AAP", "votes": 5},
-    {"name": "Janata Dal Party", "votes": 9},
-    {"name": "NOTA", "votes": 11},
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -18,18 +11,23 @@ class FirestoreHomePageState extends State<FirestoreHomePage> {
   }
 
   Widget buildBody(BuildContext context) {
-    // We will add the code here in the next section
-    return buildList(context, party);
+    return StreamBuilder<QuerySnapshot>(
+      stream: FirebaseFirestore.instance.collection('Votes').snapshots(),
+      builder: (context, snapshot) {
+        if (!snapshot.hasData) return LinearProgressIndicator();
+        return buildList(context, snapshot.data.docs);
+      },
+    );
   }
 
-  Widget buildList(BuildContext context, List<Map> snapshot) {
+  Widget buildList(BuildContext context, List<DocumentSnapshot> snapshot) {
     return ListView(
       padding: const EdgeInsets.only(top: 22.0),
       children: snapshot.map((data) => buildListItem(context, data)).toList(),
     );
   }
 
-  Widget buildListItem(BuildContext context, Map data) {
+  Widget buildListItem(BuildContext context, DocumentSnapshot data) {
     final record = Record.fromMap(data);
 
     // Adding the padding to ensure enough space is given
@@ -45,7 +43,9 @@ class FirestoreHomePageState extends State<FirestoreHomePage> {
         child: ListTile(
           title: Text(record.name),
           trailing: Text(record.votes.toString()),
-          onTap: () => print(record),
+          onTap: () {
+            print(record);
+          }
         ),
       ),
     );
