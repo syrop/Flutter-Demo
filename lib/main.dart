@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_app/firestore/FirestoreScreen.dart';
 import 'package:flutter_app/staticmap/StaticMapScreen.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutter_app/LocalizedScreen.dart';
@@ -169,6 +170,16 @@ class _HomePageState extends State<HomePage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => StaticMapScreen()),
+              );
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.flag),
+            title: Text('Firestore Screen'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => FirestoreScreen()),
               );
             },
           ),
