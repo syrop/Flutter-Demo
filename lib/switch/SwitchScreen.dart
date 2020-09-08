@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_app/SwitchHomePage.dart';
+import 'package:flutter_app/switch/SwitchHomePage.dart';
 import 'SwitchHomePageState.dart';
 
 class SwitchScreen extends StatelessWidget {

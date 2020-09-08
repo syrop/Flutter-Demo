@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:fluttertoast/fluttertoast.dart';
-import 'package:flutter_app/LocalizationScreen.dart';
-import 'package:flutter_app/SwitchScreen.dart';
+import 'package:flutter_app/LocalizedScreen.dart';
+import 'package:flutter_app/switch/SwitchScreen.dart';
 import 'ListScreen.dart';
 import 'HttpScreen.dart';
 import 'localization/WiktorLocalizationsDelegate.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'BatteryScreen.dart';
+import 'battery/BatteryScreen.dart';
 
 void main() {
   runApp(new MyApp());
@@ -143,11 +143,11 @@ class _HomePageState extends State<HomePage> {
           ),
           ListTile(
             leading: Icon(Icons.flag),
-            title: Text('Localizations Screen'),
+            title: Text('Localized Screen'),
             onTap: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => LocalizationsScreen()),
+                MaterialPageRoute(builder: (context) => LocalizedScreen()),
               );
             },
           ),

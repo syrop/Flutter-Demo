@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'localization/WiktorLocalizations.dart';
 
-class LocalizationsScreen extends StatelessWidget {
+class LocalizedScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
