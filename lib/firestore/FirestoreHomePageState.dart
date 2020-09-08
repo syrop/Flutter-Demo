@@ -28,7 +28,7 @@ class FirestoreHomePageState extends State<FirestoreHomePage> {
   }
 
   Widget buildListItem(BuildContext context, DocumentSnapshot data) {
-    final record = Record.fromMap(data);
+    final record = Record.fromSnapshot(data);
 
     // Adding the padding to ensure enough space is given
     return Padding(
@@ -45,6 +45,12 @@ class FirestoreHomePageState extends State<FirestoreHomePage> {
           trailing: Text(record.votes.toString()),
           onTap: () {
             print(record);
+            FirebaseFirestore.instance.runTransaction((transaction)
+            async {
+              final freshFbSnapshot = await transaction.get(data.reference);
+              final updated = Record.fromSnapshot(freshFbSnapshot);
+              transaction.update(record.reference, {'votes': updated.votes + 1});
+            });
           }
         ),
       ),

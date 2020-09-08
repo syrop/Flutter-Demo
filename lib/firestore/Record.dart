@@ -6,13 +6,13 @@ class Record {
   final DocumentReference reference;
 
   Record.fromMap(map, {this.reference})
-    : assert(map.get('name') != null),
-      assert(map.get('votes') != null),
-      name = map.get('name'),
-      votes = map.get('votes');
+    : assert(map['name'] != null),
+      assert(map['votes'] != null),
+      name = map['name'],
+      votes = map['votes'];
 
   Record.fromSnapshot(DocumentSnapshot snapshot)
-    : this.fromMap(snapshot.data, reference: snapshot.reference);
+    : this.fromMap(snapshot.data(), reference: snapshot.reference);
 
   @override
   String toString() => "Record<$name:$votes>";
