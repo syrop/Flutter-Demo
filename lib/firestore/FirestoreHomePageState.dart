@@ -46,11 +46,11 @@ class FirestoreHomePageState extends State<FirestoreHomePage> {
           onTap: () {
             print(record);
             FirebaseFirestore.instance.runTransaction((transaction)
-            async {
-              final freshFbSnapshot = await transaction.get(data.reference);
-              final updated = Record.fromSnapshot(freshFbSnapshot);
-              transaction.update(record.reference, {'votes': updated.votes + 1});
-            });
+              async {
+                final freshFbSnapshot = await transaction.get(data.reference);
+                final updated = Record.fromSnapshot(freshFbSnapshot);
+                transaction.update(record.reference, {'votes': updated.votes + 1});
+              });
           }
         ),
       ),
