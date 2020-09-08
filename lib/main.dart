@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_app/staticmap/StaticMapScreen.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutter_app/LocalizedScreen.dart';
 import 'package:flutter_app/switch/SwitchScreen.dart';
@@ -158,6 +159,16 @@ class _HomePageState extends State<HomePage> {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => BatteryScreen()),
+              );
+            },
+          ),
+          ListTile(
+            leading: Icon(Icons.flag),
+            title: Text('Static Map Screen'),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => StaticMapScreen()),
               );
             },
           ),
