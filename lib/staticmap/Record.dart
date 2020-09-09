@@ -11,9 +11,6 @@ class Record {
       name = map['name'],
       votes = map['votes'];
 
-  Record.fromSnapshot(DocumentSnapshot snapshot)
-    : this.fromMap(snapshot.data, reference: snapshot.reference);
-
   @override
   String toString() => "Record<$name:$votes>";
 }
